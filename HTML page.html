@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<html>
+    <head> 
+        <title> National Raffle draw 2025</title>
+        <link rel="stylesheet" href="styles page.css">
+    </head>
+
+    <body>
+        <div class = box>
+        <h1> Unlock your Luck! </h1>
+        <h3> -The purpose of this webpage is to provide the outcomes of 
+            the nationwide raffle draw for its target audience to watch-</h3>
+
+        
+        <button onclick ="generator()">Click here to view the results</button>
+        <div id="raffle"></div>
+        
+     <script>
+        function generator()
+            {
+                var num1 = Math.ceil(Math.random()*21);
+                var num2 = Math.ceil(Math.random()*21);
+                var num3 = Math.ceil(Math.random()*21);
+        
+                var win = Math.max(num1,num2,num3);
+
+                let alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+                let letter = alphabet[num1 - 1];
+
+                var time = num2*num3;
+                var hours = Math.floor(time/60);
+                var min= time % 60;
+            
+            
+            
+                document.getElementById('raffle').innerHTML = "Final results per Island region <br>"+  "Luzon: " + num1
+                                                            + " Visayas: " + num2 + " Mindanao: " + num3 + "<br><br> Most amount of winners among the 3 island regions: "+ win+ "<br><br> First letter of the province with the most winners: "
+                                                            + letter + "<br><br> Total Time it took to determine the winners: " + hours + " hours and " + min +" minutes.";
+                                                        
+            }
+
+            
+        </script>
+        </div>
+    </body>
+</html>
